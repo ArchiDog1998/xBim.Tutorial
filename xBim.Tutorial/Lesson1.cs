@@ -69,8 +69,8 @@ internal class Lesson1
         using (var trans = store.BeginTransaction("Create the application"))
         {
             var app = store.Instances.New<IfcApplication>();
-            app.ApplicationIdentifier = "xBimGH";
-            app.ApplicationFullName = "xBim GH";
+            app.ApplicationIdentifier = "xBimTest";
+            app.ApplicationFullName = "xBim Test";
 
             var org = store.Instances.New<IfcOrganization>();
             org.Description = "Archi Dream Team";
