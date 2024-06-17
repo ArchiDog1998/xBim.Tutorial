@@ -64,6 +64,12 @@ internal class Lesson1
     /// </summary>
     public static void Section4()
     {
+        var store = CreateStore();
+        store.SaveAs(PATH);
+    }
+    
+    public static IfcStore CreateStore()
+    {
         var store = IfcStore.Create(Xbim.Common.Step21.XbimSchemaVersion.Ifc4x3, Xbim.IO.XbimStoreType.EsentDatabase);
 
         using (var trans = store.BeginTransaction("Create the application"))
@@ -90,6 +96,6 @@ internal class Lesson1
 
             trans.Commit();
         }
-        store.SaveAs(PATH);
+        return store;
     }
 }

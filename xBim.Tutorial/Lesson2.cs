@@ -14,21 +14,8 @@ internal static class Lesson2
 
     public static IfcStore CreateStore()
     {
-        var credit = new XbimEditorCredentials()
-        {
-            ApplicationDevelopersName = "秋水",
-            ApplicationFullName = "xBIM tutorial",
-            ApplicationIdentifier = "xBIM_Tutorial",
-            ApplicationVersion = "1.0",
-            EditorsFamilyName = "李",
-            EditorsGivenName = "秋水",
-            EditorsOrganisationName = "秋水工作室",
-        };
-
-        var store = IfcStore.Create(credit, Xbim.Common.Step21.XbimSchemaVersion.Ifc4x3, Xbim.IO.XbimStoreType.EsentDatabase);
-
+        var store = Lesson1.CreateStore();
         AddAxis(store);
-
         return store;
     }
 
